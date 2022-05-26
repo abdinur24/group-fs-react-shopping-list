@@ -8,9 +8,9 @@ router.post('/', (req, res) =>{
     console.log(req.body);
     const list = req.body;
     console.log('In POST list', list);
-    const sqlText = `INSERT INTO "shoppingcart"("name","quantity","unit","purchased")
-    VALUES($1, $2, $3, $4)`;
-    pool.query(sqlText, [list.name, list.quantity, list.unit, list.purchased])
+    const sqlText = `INSERT INTO "shoppingcart"("name","quantity","unit")
+    VALUES($1, $2, $3);`
+    pool.query(sqlText, [list.name, list.quantity, list.unit])
         .then(results => {
             console.log('POST list is', list);
             res.sendStatus(201)
