@@ -12,7 +12,7 @@ function ShoppingForm(props){
         console.log(`The item is ${itemName} and it has quantity of ${itemQuantity} and unit of ${itemUnit}`);
 
         //  axios POST
-        axios.post('/', 
+        axios.post('/list', 
             {name: itemName, quantity: itemQuantity, unit: itemUnit})
             .then(response => getItem(), console.log('In POST'))
             .catch(err => console.log('Error in POST', err))
@@ -34,7 +34,7 @@ function ShoppingForm(props){
                 <input id="item-name"
                     value={itemUnit}
                     onChange={e => setItemUnit(e.target.value)}/>
-                <button>Add Item</button>
+                <button type="submit">Add Item</button>
             </form>
         </>
     );
