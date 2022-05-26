@@ -3,7 +3,7 @@ import Header from '../Header/Header.jsx'
 import './App.css';
 import { useEffect, useState } from 'react';
 import ShoppingForm from '../ShoppingForm/ShoppingForm.jsx';
-
+import axios from 'axios';
 
 
 function App() {
@@ -11,9 +11,10 @@ function App() {
         let [shopListArray, setShopListArray] = useState([]);
     
         const getItem = () =>{
-            axios.get('/')
+            console.log('in get') //added
+            axios.get('/list')
                 .then(response =>{
-                    console.log(response.data);
+                    console.log('get sent',response.data); //changed
                     setShopListArray(response.data)
                 }).catch(err => console.log('In GET', err));
         }
