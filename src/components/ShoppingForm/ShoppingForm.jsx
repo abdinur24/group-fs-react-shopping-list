@@ -14,7 +14,7 @@ function ShoppingForm(props){
         //  axios POST
         axios.post('/', 
             {name: itemName, quantity: itemQuantity, unit: itemUnit})
-            .then(response => getItem)
+            .then(response => getItem(), console.log('In POST'))
             .catch(err => console.log('Error in POST', err))
 
             setItemName('');
