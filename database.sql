@@ -9,7 +9,6 @@ CREATE TABLE shoppingcart(
 "quantity"  decimal(20) NOT NULL,
 "unit" varchar(20),
 "purchased" boolean default false NOT NULL)
-;
 
 SELECT * FROM shoppingcart;
 
