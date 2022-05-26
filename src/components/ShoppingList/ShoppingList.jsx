@@ -10,7 +10,7 @@ function ShoppingList({shopListArray}) {
                 <ul>
                     {shopListArray.map((name, quantity, unit, purchased, index) => 
                         <li key={index} >
-                            {name} {unit} {purchased}
+                            {name} {quantity} {unit} {purchased}
                         </li>
                     )}
                 </ul>
