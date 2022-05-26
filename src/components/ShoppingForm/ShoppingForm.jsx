@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-function ShoppingForm(){
+function ShoppingForm(props){
+    const getItem = props.getItem;
     let [itemName, setItemName] = useState('');
     let [itemQuantity, setItemQuantity] = useState('');
     let [itemUnit, setItemUnit] = useState('');
