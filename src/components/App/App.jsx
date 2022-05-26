@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../Header/Header.jsx'
 import './App.css';
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 import ShoppingForm from '../ShoppingForm/ShoppingForm.jsx';
 import axios from 'axios';
@@ -28,6 +29,7 @@ function App() {
             <Header />
             <main>
                 <ShoppingForm getItem={getItem}/>
+                <ShoppingList shopListArray={shopListArray}/>
                 <p>Under Construction...</p>
             </main>
         </div>

@@ -8,9 +8,9 @@ function ShoppingList({shopListArray}) {
             <button id="clearButton">Reset</button>
             <div>
                 <ul>
-                    {shopListArray.map((name, quantity, unit, purchased, index) => 
-                        <li key={index} >
-                            {name} {quantity} {unit} {purchased}
+                    {shopListArray.map((item) => 
+                        <li key={item.id} >
+                            {item.name} {item.quantity} {item.unit} {item.purchased}
                         </li>
                     )}
                 </ul>
