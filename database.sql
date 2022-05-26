@@ -1,7 +1,7 @@
 -- Don't forget to add your create table SQL 
 -- It is also helpful to include some test data
 
-DATABASE NAME- react-shopping-list
+--DATABASE NAME- react-shopping-list
 
 CREATE TABLE shoppingcart(
 "id" serial primary key,
