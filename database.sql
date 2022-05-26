@@ -8,7 +8,7 @@ CREATE TABLE shoppingcart(
 "name"  varchar(80) NOT NULL,
 "quantity"  decimal(20) NOT NULL,
 "unit" varchar(20),
-"purchased" boolean default false)
+"purchased" BOOLEAN DEFAULT FALSE NOT NULL)
 ;
 
 SELECT * FROM shoppingcart;
