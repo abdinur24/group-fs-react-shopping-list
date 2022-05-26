@@ -8,10 +8,10 @@ CREATE TABLE shoppingcart(
 "name"  varchar(80) NOT NULL,
 "quantity"  decimal(20) NOT NULL,
 "unit" varchar(20),
-"purchased" boolean default false)
+"purchased" boolean default false NOT NULL)
 ;
 
 SELECT * FROM shoppingcart;
 
-INSERT INTO "shoppingcart"("name","quantity","unit","purchased")
-VALUES('apple','2','lbs','false');
+INSERT INTO "shoppingcart"("name","quantity","unit")
+VALUES('apple','2','lbs');
