@@ -12,10 +12,16 @@ function ShoppingList({shopListArray,deleteItem, getItem}) {
 
     }
 
+    function resetPurchased(){
+        console.log('in reset');
+
+        axios.put('/list/unpurchase')
+    }
+
     return(
 
         <>
-            <button id="resetButton">Reset</button>
+            <button onClick={resetPurchased} id="resetButton">Reset</button>
             <button onClick={clearList} id="clearButton">Clear</button>
             <div>
                
