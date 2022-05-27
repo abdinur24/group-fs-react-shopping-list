@@ -1,10 +1,19 @@
+import axios from "axios";
+
 function ShoppingList({shopListArray}) {
     console.log("in shopping list", shopListArray);
     
+    function clearList(event){
+        console.log('in clear list');
+
+        axios.delete()
+
+    }
 
     return(
+
         <>
-            <button id="resetButton">Reset</button>
+            <button onClick={clearList} id="resetButton">Reset</button>
             <button id="clearButton">Clear</button>
             <div>
                
