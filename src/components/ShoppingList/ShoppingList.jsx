@@ -5,15 +5,21 @@ function ShoppingList({shopListArray}) {
     return(
         <>
             <button id="resetButton">Reset</button>
-            <button id="clearButton">Reset</button>
+            <button id="clearButton">Clear</button>
             <div>
-                <ul>
+               
                     {shopListArray.map((item) => 
-                        <li key={item.id} >
-                            {item.name} {item.quantity} {item.unit} {item.purchased}
-                        </li>
+                        <div key={item.id}>  
+                            {item.name} 
+                            <div>
+                            {item.quantity} {item.unit}
+                            </div> 
+                            {item.purchased}
+                            <button >Buy</button>
+                            <button>Remove</button>
+                       </div>
                     )}
-                </ul>
+               
             </div>
         </>
     )

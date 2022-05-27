@@ -4,7 +4,8 @@ import './App.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import ShoppingForm from '../ShoppingForm/ShoppingForm.jsx';
-import axios from 'axios';
+import ShoppingList from '../ShoppingList/ShoppingList.jsx';
+
 
 
 function App() {
