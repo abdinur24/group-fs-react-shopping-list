@@ -7,7 +7,7 @@ function ShoppingList({ shopListArray, getItem }) {
 
     const updatePurchase = (itemId) => {
         console.log(`updating item with and id of ${itemId}`)
-        axios.put(`/list/${itemId}`)
+        axios.put(`/list/purchase/${itemId}`)
             .then(response => {
                 getItem();
             }).catch(err => console.log('Error in UPDATING purcahse', err));
@@ -30,12 +30,22 @@ function ShoppingList({ shopListArray, getItem }) {
 
     }
 
-    return (
+
+    function resetPurchased(){
+        console.log('in reset');
+
+        axios.put('/list/unpurchase', []).then(response => {
+                getItem();
+            }).catch(err => console.log('Error in UPDATING purcahse', err));
+    }
+
+    return(
 
         <>
 
-            <button id="resetButton">Reset</button>
-            <button onClick={clearList} id="clearButton">Clear</button>
+            <button onClick={resetPurchased} id="resetButton">Reset</button>
+           <button onClick={clearList} id="clearButton">Clear</button>
+
 
             <div>
 
