@@ -2,6 +2,7 @@
 import axios from "axios";
 
 function ShoppingList({ shopListArray, getItem }) {
+
     console.log("in shopping list", shopListArray);
 
     const updatePurchase = (itemId) => {
