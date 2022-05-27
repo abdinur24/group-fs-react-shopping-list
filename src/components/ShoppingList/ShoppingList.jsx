@@ -1,5 +1,6 @@
 
 import axios from "axios";
+import './ShoppingList.css';
 
 function ShoppingList({ shopListArray, getItem }) {
 
@@ -41,16 +42,16 @@ function ShoppingList({ shopListArray, getItem }) {
 
     return(
 
-        <>
+        <div>
 
             <button onClick={resetPurchased} id="resetButton">Reset</button>
            <button onClick={clearList} id="clearButton">Clear</button>
 
-
+            <h2> Shopping List: </h2>
             <div>
 
                 {shopListArray.map((item) =>
-                    <div key={item.id}>
+                    <div className="listStyle" key={item.id}>
                         {item.name}
                         <div>
                             {item.quantity} {item.unit}
@@ -70,7 +71,7 @@ function ShoppingList({ shopListArray, getItem }) {
                 )}
 
             </div>
-        </>
+        </div>
     )
 }
 
