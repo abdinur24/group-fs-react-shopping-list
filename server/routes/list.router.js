@@ -24,7 +24,7 @@ router.post('/', (req, res) =>{
 // Get Shopping List
 router.get('/', (req, res) =>{
     console.log('in get');
-    const sqlText = `SELECT * FROM "shoppingcart" ORDER BY "purchased" DESC, "id";`;
+    const sqlText = `SELECT * FROM "shoppingcart" ORDER BY "purchased" ASC, "name";`;
     pool.query(sqlText).then(response => res.send(response.rows)).catch((error) => {
             console.log('Error in get', error);
             res.sendStatus(500);
