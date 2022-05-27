@@ -13,9 +13,10 @@ function App() {
         let [shopListArray, setShopListArray] = useState([]);
     
         const getItem = () =>{
+            console.log('in get') //added
             axios.get('/list')
                 .then(response =>{
-                    console.log(response.data);
+                    console.log('get sent',response.data); //changed
                     setShopListArray(response.data)
                 }).catch(err => console.log('In GET', err));
         }
@@ -38,8 +39,7 @@ function App() {
             <Header />
             <main>
                 <ShoppingForm getItem={getItem}/>
-                <ShoppingList shopListArray={shopListArray} deleteItem={deleteItem}/>
-                <p>Under Construction...</p>
+                <ShoppingList shopListArray={shopListArray} deleteItem={deleteItem} getItem={getItem}/>
             </main>
         </div>
     );
