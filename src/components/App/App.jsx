@@ -40,6 +40,7 @@ function App() {
             <main>
                 <ShoppingForm getItem={getItem}/>
                 <ShoppingList shopListArray={shopListArray} deleteItem={deleteItem} getItem={getItem}/>
+
             </main>
         </div>
     );
