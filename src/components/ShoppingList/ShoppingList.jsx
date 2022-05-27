@@ -1,6 +1,8 @@
+
 import axios from "axios";
 
 function ShoppingList({shopListArray,deleteItem, getItem}) {
+
     console.log("in shopping list", shopListArray);
     
     function clearList(event){
@@ -15,8 +17,10 @@ function ShoppingList({shopListArray,deleteItem, getItem}) {
     return(
 
         <>
-            <button id="resetButton">Reset</button>
-            <button onClick={clearList} id="clearButton">Clear</button>
+
+            <button onClick={() => deleteItem()} id="resetButton">Reset</button>
+           <button onClick={clearList} id="clearButton">Clear</button>
+
             <div>
                
                     {shopListArray.map((item) => 
