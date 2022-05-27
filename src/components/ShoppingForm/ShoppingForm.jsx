@@ -25,12 +25,15 @@ function ShoppingForm(props){
     return  (
         <>
             <form onSubmit={addItem}>
+            <label htmlFor="name-input">Name:</label>
                 <input id="item-name"
                     value={itemName}
                     onChange={e => setItemName(e.target.value)}/>
+                <label htmlFor="quantity-input">Quantity:</label>
                 <input id="item-quantity"
                     value={itemQuantity}
                     onChange={e => setItemQuantity(e.target.value)}/>
+                 <label htmlFor="unit-input">Unit:</label>
                 <input id="item-name"
                     value={itemUnit}
                     onChange={e => setItemUnit(e.target.value)}/>
