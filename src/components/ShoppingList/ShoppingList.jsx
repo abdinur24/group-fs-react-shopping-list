@@ -33,7 +33,7 @@ function ShoppingList({ shopListArray, getItem }) {
 
         <>
 
-            <button onClick={() => deleteItem()} id="resetButton">Reset</button>
+            <button id="resetButton">Reset</button>
            <button onClick={clearList} id="clearButton">Clear</button>
 
             <div>

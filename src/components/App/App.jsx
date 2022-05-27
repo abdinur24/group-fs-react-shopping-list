@@ -21,14 +21,7 @@ function App() {
                 }).catch(err => console.log('In GET', err));
         }
 
-        const deleteItem= () =>{
-            console.log('1')
-            axios.delete(`/list`)
-            .then((response)=>
-            {console.log('2'); 
-            getItem()})
-            .catch(err =>{ console.log('error in deleteitem', err)})
-        }
+      
     
         useEffect(() =>{
             getItem();
@@ -39,7 +32,7 @@ function App() {
             <Header />
             <main>
                 <ShoppingForm getItem={getItem}/>
-                <ShoppingList shopListArray={shopListArray} deleteItem={deleteItem} getItem={getItem}/>
+                <ShoppingList shopListArray={shopListArray} getItem={getItem}/>
 
             </main>
         </div>
