@@ -2,6 +2,7 @@
 import axios from "axios";
 
 function ShoppingList({ shopListArray, getItem }) {
+
     console.log("in shopping list", shopListArray);
 
     const updatePurchase = (itemId) => {
@@ -12,7 +13,7 @@ function ShoppingList({ shopListArray, getItem }) {
             }).catch(err => console.log('Error in UPDATING purcahse', err));
     }
 
-    const deleteItem = (itemId) =>{
+    const deleteItem = (itemId) => {
         console.log(`deleting item with and id of ${itemId}`)
         axios.delete(`/list/${itemId}`)
             .then(response => {
@@ -20,14 +21,15 @@ function ShoppingList({ shopListArray, getItem }) {
             }).catch(err => console.log('Error in DELETING item', err));
     }
 
-    function clearList(event){
+    function clearList(event) {
         console.log('in clear list');
 
         axios.delete(`/list/`)
-            .then(()=>{getItem()})
-            .catch(err =>{ console.log('error in Clear', err)})
+            .then(() => { getItem() })
+            .catch(err => { console.log('error in Clear', err) })
 
     }
+
 
     function resetPurchased(){
         console.log('in reset');
@@ -44,6 +46,7 @@ function ShoppingList({ shopListArray, getItem }) {
             <button onClick={resetPurchased} id="resetButton">Reset</button>
            <button onClick={clearList} id="clearButton">Clear</button>
 
+
             <div>
 
                 {shopListArray.map((item) =>
@@ -53,11 +56,16 @@ function ShoppingList({ shopListArray, getItem }) {
                             {item.quantity} {item.unit}
                         </div>
                         {item.purchased}
-                        <button onClick={() => updatePurchase(item.id)} >Purchase</button>
-                        {/* {itemPurchased(item.purchased)} */}
-                        <button onClick={() => deleteItem(item.id)} >Remove</button>
-                        {item.purchased ? <p>Purchased</p> : <p></p>}
-                       
+                        <div>
+                            {item.purchased ? <p>Purchased</p> :
+                            <div>
+                            <button onClick={() => updatePurchase(item.id)} >Purchase</button>
+                            <button onClick={() => deleteItem(item.id)} >Remove</button>
+                            </div>
+                }
+
+                        </div>
+
                     </div>
                 )}
 
