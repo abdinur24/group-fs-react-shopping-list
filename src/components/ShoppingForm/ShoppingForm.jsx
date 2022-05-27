@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import './ShoppingForm.css'; 
 
 function ShoppingForm(props){
     const getItem = props.getItem;
@@ -37,7 +38,7 @@ function ShoppingForm(props){
                 <input id="item-name"
                     value={itemUnit}
                     onChange={e => setItemUnit(e.target.value)}/>
-                <button type="submit">Add Item</button>
+                <button id='addButton' type="submit">Add Item</button>
             </form>
         </>
     );
