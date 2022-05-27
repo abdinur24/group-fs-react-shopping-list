@@ -29,7 +29,7 @@ function App() {
             <Header />
             <main>
                 <ShoppingForm getItem={getItem}/>
-                <ShoppingList shopListArray={shopListArray}/>
+                <ShoppingList shopListArray={shopListArray} getItem={getItem}/>
                 <p>Under Construction...</p>
             </main>
         </div>
