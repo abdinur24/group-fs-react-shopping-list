@@ -32,7 +32,7 @@ router.get('/', (req, res) =>{
 });
 
 
-router.put('/:id', (req, res) =>{
+router.put('/purchase/:id', (req, res) =>{
     const listid = req.params.id
     const sqlText = `UPDATE "shoppingcart" SET "purchased" = TRUE WHERE "id"=$1;`
     pool.query(sqlText, [listid])
@@ -44,11 +44,16 @@ router.put('/:id', (req, res) =>{
         })
 })
 
-
-
-
-
-
+router.put('/unpurchase', (req, res) =>{
+    const sqlText = `UPDATE "shoppingcart" SET "purchased" = FALSE WHERE "purchased"=TRUE;`
+    pool.query(sqlText)
+        .then(results => {
+            res.sendStatus(201)
+        }).catch(err =>{
+            console.log('Error in PUT', err);
+            res.sendStatus(500);
+        })
+})
 
 router.delete('/:id', (req, res) => {
     const query = `DELETE FROM shoppingcart WHERE id=$1`;
@@ -67,7 +72,6 @@ router.delete('/', (req, res) => {
     //const values = [req.params];
     pool.query(query).then((response) => {
         console.log('3');
-        //res.send('delete all router fired');
         res.sendStatus(200);
     }).catch(err => {
         console.log('error in delete all', err);

@@ -10,29 +10,27 @@ import ShoppingList from '../ShoppingList/ShoppingList.jsx';
 
 function App() {
 
-        let [shopListArray, setShopListArray] = useState([]);
-    
-        const getItem = () =>{
-            console.log('in get') //added
-            axios.get('/list')
-                .then(response =>{
-                    console.log('get sent',response.data); //changed
-                    setShopListArray(response.data)
-                }).catch(err => console.log('In GET', err));
-        }
+    let [shopListArray, setShopListArray] = useState([]);
 
-      
-    
-        useEffect(() =>{
-            getItem();
-        }, [])
-    
+    const getItem = () => {
+        console.log('in get') //added
+        axios.get('/list')
+            .then(response => {
+                console.log('get sent', response.data); //changed
+                setShopListArray(response.data)
+            }).catch(err => console.log('In GET', err));
+    }
+
+    useEffect(() => {
+        getItem();
+    }, [])
+
     return (
         <div className="App">
             <Header />
             <main>
-                <ShoppingForm getItem={getItem}/>
-                <ShoppingList shopListArray={shopListArray} getItem={getItem}/>
+                <ShoppingForm getItem={getItem} />
+                <ShoppingList shopListArray={shopListArray} getItem={getItem} />
 
             </main>
         </div>
