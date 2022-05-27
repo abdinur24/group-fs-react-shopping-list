@@ -1,13 +1,11 @@
 .listStyle {
     height: fit-content;
     padding: 10px;
-    background-color:cornflowerblue;
+    background-color:bisque;
     width: fit-content;
     border: solid 3px black;
-    margin:20px;
+    margin-bottom: 30px;
     font-size: 40px;
     font-family:'Times New Roman', Times, serif;
-    color:whitesmoke;
-    display: inline-block;
-    border-radius: 40px;
+    color:slateblue;
 }
