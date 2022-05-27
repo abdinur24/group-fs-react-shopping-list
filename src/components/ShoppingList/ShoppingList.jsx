@@ -1,20 +1,22 @@
 import axios from "axios";
 
-function ShoppingList({shopListArray}) {
+function ShoppingList({shopListArray,deleteItem, getItem}) {
     console.log("in shopping list", shopListArray);
     
     function clearList(event){
         console.log('in clear list');
 
-        axios.delete()
+        axios.delete(`/list/`)
+            .then(()=>{getItem()})
+            .catch(err =>{ console.log('error in Clear', err)})
 
     }
 
     return(
 
         <>
-            <button onClick={clearList} id="resetButton">Reset</button>
-            <button id="clearButton">Clear</button>
+            <button id="resetButton">Reset</button>
+            <button onClick={clearList} id="clearButton">Clear</button>
             <div>
                
                     {shopListArray.map((item) => 
@@ -24,7 +26,7 @@ function ShoppingList({shopListArray}) {
                             {item.quantity} {item.unit}
                             </div> 
                             {item.purchased}
-                            <button >Buy</button>
+                            <button>Buy</button>
                             <button>Remove</button>
                        </div>
                     )}
