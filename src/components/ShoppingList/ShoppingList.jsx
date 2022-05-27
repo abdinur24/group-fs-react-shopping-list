@@ -1,4 +1,4 @@
-function ShoppingList({shopListArray}) {
+function ShoppingList({shopListArray,deleteList}) {
     console.log("in shopping list", shopListArray);
     
 
