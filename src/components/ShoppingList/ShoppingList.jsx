@@ -1,11 +1,11 @@
-function ShoppingList({shopListArray,deleteList}) {
+function ShoppingList({shopListArray,deleteItem}) {
     console.log("in shopping list", shopListArray);
     
 
     return(
         <>
-            <button id="resetButton">Reset</button>
-            <button id="clearButton">Reset</button>
+            <button onClick={() => deleteItem()} id="resetButton">Reset</button>
+            <button id="clearButton">Clear</button>
             <div>
                
                     {shopListArray.map((item) => 
